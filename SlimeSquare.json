@@ -1,0 +1,49 @@
+{
+	"frames": [
+		{
+			"name": "Frame1",
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"width": 16,
+				"height": 16
+			}
+		},
+		{
+			"name": "Frame2",
+			"frame": {
+				"x": 16,
+				"y": 0,
+				"width": 16,
+				"height": 16
+			}
+		},
+		{
+			"name": "Frame3",
+			"frame": {
+				"x": 32,
+				"y": 0,
+				"width": 16,
+				"height": 16
+			}
+		},
+		{
+			"name": "Frame4",
+			"frame": {
+				"x": 48,
+				"y": 0,
+				"width": 16,
+				"height": 16
+			}
+		},
+		{
+			"name": "Frame5",
+			"frame": {
+				"x": 64,
+				"y": 0,
+				"width": 16,
+				"height": 16
+			}
+		}
+	]
+}
