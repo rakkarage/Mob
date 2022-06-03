@@ -1,6 +1,8 @@
 function preload() {
 	_layer = new Layer()
-	_slimeA = Slime.SlimeA(_layer, [16, 16])
+	_slimeA1 = Slime.SlimeA(_layer, [16, 16])
+	_slimeA2 = Slime.SlimeA(_layer, [16, 32])
+	_slimeA3 = Slime.SlimeA(_layer, [16, 48])
 	_slimeB = Slime.SlimeB(_layer, [32, 32])
 	_slimeC = Slime.SlimeC(_layer, [128, 128])
 	_slimeP = Slime.SlimeP(_layer, [100, 100])

@@ -4,20 +4,20 @@ class Mob {
 		var that = this
 		loadJSON(data, function (frames) {
 			that.ss = loadSpriteSheet(image, frames)
-			var attackFrames = that.attackFrames(frames.frames)
-			that.attack = loadAnimation(new SpriteSheet(image, attackFrames))
+			that._attackFrames = that.attackFrames(frames.frames)
+			that.attack = loadAnimation(new SpriteSheet(image, that._attackFrames))
 			that.attack.frameDelay = 8
-			var idle0Frames = that.idle0Frames(frames.frames)
-			that.idle0 = loadAnimation(new SpriteSheet(image, idle0Frames))
+			that._idle0Frames = that.idle0Frames(frames.frames)
+			that.idle0 = loadAnimation(new SpriteSheet(image, that._idle0Frames))
 			that.idle0.frameDelay = 16
-			var idle1Frames = that.idle1Frames(frames.frames)
-			that.idle1 = loadAnimation(new SpriteSheet(image, idle1Frames))
+			that._idle1Frames = that.idle1Frames(frames.frames)
+			that.idle1 = loadAnimation(new SpriteSheet(image, that._idle1Frames))
 			that.idle1.frameDelay = 16
-			var idle2Frames = that.idle2Frames(frames.frames)
-			that.idle2 = loadAnimation(new SpriteSheet(image, idle1Frames))
+			that._idle2Frames = that.idle2Frames(frames.frames)
+			that.idle2 = loadAnimation(new SpriteSheet(image, that._idle2Frames))
 			that.idle2.frameDelay = 16
-			var walkFrames = that.walkFrames(frames.frames)
-			that.walk = loadAnimation(new SpriteSheet(image, walkFrames))
+			that._walkFrames = that.walkFrames(frames.frames)
+			that.walk = loadAnimation(new SpriteSheet(image, that._walkFrames))
 			that.walk.frameDelay = 16
 		})
 		layer.Add(this)
@@ -33,12 +33,16 @@ class Mob {
 		switch (r) {
 			case 0:
 				this.s.changeAnimation("idle0")
+				var r = Math.floor(Math.random() * this._idle0Frames.length)
+				this.s.animation.changeFrame()
 				break
 			case 1:
 				this.s.changeAnimation("idle1")
+				this.s.animation.changeFrame(Math.floor(Math.random() * this._idle1Frames.length))
 				break
 			case 2:
 				this.s.changeAnimation("idle2")
+				this.s.animation.changeFrame(Math.floor(Math.random() * this._idle2Frames.length))
 				break
 		}
 	}
