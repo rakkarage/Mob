@@ -1,5 +1,5 @@
 class SlimeSmall extends Mob {
-	static SlimeSmallA(layer, p) { return new Slime("SlimeSmall.json", "img/SlimeSmallA.png", layer, p) }
+	static SlimeSmallA(layer, p) { return new Slime("data/SlimeSmall.json", "img/SlimeSmallA.png", layer, p) }
 	constructor(data, image, layer, p) {
 		super(data, image, layer, p)
 	}
