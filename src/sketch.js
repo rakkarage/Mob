@@ -13,6 +13,7 @@ function setup() {
 	createCanvas(400, 400)
 	noSmooth()
 	_layer.Setup()
+	_slimeB.Fsm.attack()
 }
 
 function draw() {

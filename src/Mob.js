@@ -33,8 +33,7 @@ class Mob {
 		switch (r) {
 			case 0:
 				this.s.changeAnimation("idle0")
-				var r = Math.floor(Math.random() * this._idle0Frames.length)
-				this.s.animation.changeFrame()
+				this.s.animation.changeFrame(Math.floor(Math.random() * this._idle0Frames.length))
 				break
 			case 1:
 				this.s.changeAnimation("idle1")
@@ -45,6 +44,24 @@ class Mob {
 				this.s.animation.changeFrame(Math.floor(Math.random() * this._idle2Frames.length))
 				break
 		}
+		console.log('this')
+		var MobFsm = new StateMachine.factory({
+			init: 'idle',
+			transitions: [
+				{ name: 'attack', from: '*', to: 'attack' },
+				{ name: 'idle', from: '*', to: 'idle' },
+				{ name: 'walk', from: '*', to: 'walk' }
+			],
+			methods: {
+				onAttack: function () { console.log('attack') },
+				onIdle: function () { console.log('idle') },
+				onWalk: function () { console.log('walk') }
+			}
+		});
+		this.fsm = new MobFsm()
+	}
+	get Fsm() {
+		return this.fsm
 	}
 	Draw() {
 		drawSprites()

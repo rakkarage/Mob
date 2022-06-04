@@ -3,6 +3,9 @@ class SlimeSmall extends Mob {
 	constructor(data, image, layer, p) {
 		super(data, image, layer, p)
 	}
+	get Fsm() {
+		return super.Fsm
+	}
 	attackFrames(a) { return [a[1], a[0], a[1], a[2], a[10], a[11], a[12], a[13], a[14], a[0], a[1]] }
 	idle0Frames(a) { return [a[1], a[0], a[1], a[2], a[1], a[0], a[1], a[2], a[1], a[0], a[1], a[2]] }
 	idle1Frames(a) { return [a[1], a[0], a[2]] }
