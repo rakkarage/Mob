@@ -1,8 +1,8 @@
 class Slime extends Mob {
-	static SlimeA(layer, p) { return new Slime("data/Slime.json", "img/SlimeA.png", layer, p) }
-	static SlimeB(layer, p) { return new Slime("data/Slime.json", "img/SlimeB.png", layer, p) }
-	static SlimeC(layer, p) { return new Slime("data/Slime.json", "img/SlimeC.png", layer, p) }
-	static SlimeP(layer, p) { return new Slime("data/Slime.json", "img/SlimeP.png", layer, p) }
+	static SlimeA(layer, p) { return new Slime("data/Slime.json", "img/Mob/SlimeA.png", layer, p) }
+	static SlimeB(layer, p) { return new Slime("data/Slime.json", "img/Mob/SlimeB.png", layer, p) }
+	static SlimeC(layer, p) { return new Slime("data/Slime.json", "img/Mob/SlimeC.png", layer, p) }
+	static SlimeP(layer, p) { return new Slime("data/Slime.json", "img/Mob/SlimeP.png", layer, p) }
 	constructor(data, image, layer, p) {
 		super(data, image, layer, p)
 	}
