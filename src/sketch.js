@@ -14,6 +14,7 @@ function setup() {
 	noSmooth()
 	_layer.Setup()
 	_slimeB.Fsm.attack()
+	_slimeC.Fsm.walk()
 }
 
 function draw() {
