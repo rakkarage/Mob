@@ -5,3 +5,4 @@
 - <del>state machine for animation states</del>
 - make state machine reset when attack or walk done?
 - tilemap
+- random functions to place mobs
