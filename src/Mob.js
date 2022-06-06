@@ -48,6 +48,8 @@ class Mob {
 				onAttack: function () {
 					that.s.changeAnimation("attack")
 					that.s.animation.changeFrame(Math.floor(Math.random() * that._attackFrames.length))
+					that.s.animation.looping = false
+					that.s.animation.onComplete = () => { this.onIdle() }
 				},
 				onIdle: function () {
 					var r = Math.floor(Math.random() * 3)
@@ -55,20 +57,25 @@ class Mob {
 						case 0:
 							that.s.changeAnimation("idle0")
 							that.s.animation.changeFrame(Math.floor(Math.random() * that._idle0Frames.length))
+							that.s.animation.onComplete = () => { this.onIdle() }
 							break
 						case 1:
 							that.s.changeAnimation("idle1")
 							that.s.animation.changeFrame(Math.floor(Math.random() * that._idle1Frames.length))
+							that.s.animation.onComplete = () => { this.onIdle() }
 							break
 						case 2:
 							that.s.changeAnimation("idle2")
 							that.s.animation.changeFrame(Math.floor(Math.random() * that._idle2Frames.length))
+							that.s.animation.onComplete = () => { this.onIdle() }
 							break
 					}
 				},
 				onWalk: function () {
 					that.s.changeAnimation("walk")
 					that.s.animation.changeFrame(Math.floor(Math.random() * that._walkFrames.length))
+					that.s.animation.looping = false
+					that.s.animation.onComplete = () => { this.onIdle() }
 				}
 			}
 		});
