@@ -8,9 +8,4 @@ class SlimeSquare extends Mob {
 	get Fsm() {
 		return super.Fsm
 	}
-	// attackFrames(a) { return [a[1], a[0], a[1], a[2], a[1], a[0], a[1]] }
-	// idle0Frames(a) { return [a[1], a[0], a[1], a[0], a[1], a[0]] }
-	// idle1Frames(a) { return [a[1], a[1], a[1]] }
-	// idle2Frames(a) { return [a[0], a[0], a[0]] }
-	// walkFrames(a) { return [a[1], a[0], a[1], a[2], a[1], a[0], a[1]] }
 }
