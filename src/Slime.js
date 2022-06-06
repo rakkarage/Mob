@@ -6,7 +6,4 @@ class Slime extends Mob {
 	constructor(p, layer, image, data = "data/Slime.json", animation = "data/SlimeAnimation.json") {
 		super(p, layer, image, data, animation)
 	}
-	get Fsm() {
-		return super.Fsm
-	}
 }

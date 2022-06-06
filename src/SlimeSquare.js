@@ -5,7 +5,4 @@ class SlimeSquare extends Mob {
 	constructor(p, layer, image, data = "data/SlimeSquare.json", animation = "data/SlimeSquareAnimation.json") {
 		super(p, layer, image, data, animation)
 	}
-	get Fsm() {
-		return super.Fsm
-	}
 }

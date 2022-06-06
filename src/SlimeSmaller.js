@@ -3,7 +3,4 @@ class SlimeSmaller extends Mob {
 	constructor(p, layer, image, data = "data/SlimeSmall.json", animation = "data/SlimeSmallAnimation.json") {
 		super(p, layer, image, data, animation)
 	}
-	get Fsm() {
-		return super.Fsm
-	}
 }

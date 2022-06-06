@@ -22,7 +22,6 @@ class Mob {
 				that.walk.frameDelay = 8
 			})
 		})
-		console.log(layer)
 		layer.Add(this)
 	}
 	_frames(indices, from) {
