@@ -10,9 +10,9 @@ function preload() {
 	_slimeSmallA = SlimeSmall.SlimeSmallA(_layer, [200, 16])
 	_slimeSmallerA1 = SlimeSmaller.SlimeSmallerA(_layer, [16, 64])
 	_slimeSmallerA2 = SlimeSmaller.SlimeSmallerA(_layer, [16, 80])
-	// _slimeSquareA = SlimeSquare.SlimeSquareA(_layer, [80, 16])
-	// _slimeSquareSmallA = SlimeSquare.SlimeSquareSmallA(_layer, [96, 16])
-	// _slimeSquareSmallerA = SlimeSquare.SlimeSquareSmallerA(_layer, [128, 16])
+	_slimeSquareA = SlimeSquare.SlimeSquareA(_layer, [80, 16])
+	_slimeSquareSmallA = SlimeSquare.SlimeSquareSmallA(_layer, [96, 16])
+	_slimeSquareSmallerA = SlimeSquare.SlimeSquareSmallerA(_layer, [128, 16])
 }
 
 function setup() {
