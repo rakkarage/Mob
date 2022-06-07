@@ -25,5 +25,6 @@ function setup() {
 
 function draw() {
 	background(0)
+	_tileMap.Draw()
 	_layer.Draw()
 }
