@@ -1,7 +1,4 @@
 class TileMap {
-	static MakeLayer(spriteSheet) {
-		return new TileMapLayer(spriteSheet, this.tileSize, this.mapWidth, this.mapHeight)
-	}
 	constructor(spriteSheet) {
 		this.ss = spriteSheet
 		this.theme = 0
@@ -18,37 +15,38 @@ class TileMap {
 		this.ssTheme = loadSpriteSheet("img/Tile/Theme.png", 16, 16, 116)
 		this.ssWater = loadSpriteSheet("img/Tile/Water.png", 16, 16, 56)
 		this.mapLayers = [
-			MakeLayer(this.ssTheme),
-			MakeLayer(this.ssTheme),
-			MakeLayer(this.ssOutside),
-			MakeLayer(this.ssWater),
-			MakeLayer(this.ssDoodad),
-			MakeLayer(this.ssWater),
-			MakeLayer(this.ssDoodad),
-			MakeLayer(this.ssLight),
-			MakeLayer(this.ssEdge)
+			new TileMapLayer(this.ssTheme, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssTheme, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssOutside, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssWater, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssDoodad, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssWater, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssDoodad, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssLight, this.tileSize, this.mapWidth, this.mapHeight),
+			new TileMapLayer(this.ssEdge, this.tileSize, this.mapWidth, this.mapHeight)
 		]
 	}
 	Draw() {
-		for (var y = 0; y < this.mapHeight; y++) {
-			for (var x = 0; x < this.mapWidth; x++) {
-				this.mapLayers.forEach(layer => {
+		this.mapLayers.forEach(layer => {
+			console.log(layer)
+			for (var y = 0; y < this.mapHeight; y++) {
+				for (var x = 0; x < this.mapWidth; x++) {
+					console.log(x + ", " + y)
 					var tile = layer.GetMap(x, y)
 					if (tile != -1) {
 						layer.ss.drawFrame(tile, x * this.tileSize, y * this.tileSize)
 					}
-				});
+				}
 			}
-		}
+		})
 	}
 	SetRandomFloor(x, y) {
-		this.mapLayers[0].SetData(x, y, RandomFloor())
+		this.mapLayers[0].SetData(x, y, this.RandomFloor())
 	}
 	RandomFloor() {
-		return Math.Random(13, 18)
+		return this.Random(13, 18)
 	}
 	Random(min, max) {
-		return Math.floor(Math.random() * (max - min)) + min
 	}
 	SetRandomEdge(x, y) {
 

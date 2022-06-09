@@ -1,6 +1,6 @@
 class TileMapLayer {
 	constructor(spriteSheet, t, w, h) {
-		this.ss = ss
+		this.ss = spriteSheet
 		this.tileSize = t
 		this.mapWidth = w
 		this.mapHeight = h
