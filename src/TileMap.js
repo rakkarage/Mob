@@ -1,4 +1,7 @@
 class TileMap {
+	static MakeLayer(spriteSheet) {
+		return new TileMapLayer(spriteSheet, this.tileSize, this.mapWidth, this.mapHeight)
+	}
 	constructor(spriteSheet) {
 		this.ss = spriteSheet
 		this.theme = 0
@@ -15,19 +18,16 @@ class TileMap {
 		this.ssTheme = loadSpriteSheet("img/Tile/Theme.png", 16, 16, 116)
 		this.ssWater = loadSpriteSheet("img/Tile/Water.png", 16, 16, 56)
 		this.mapLayers = [
-			Layer(this.ssTheme),
-			Layer(this.ssTheme),
-			Layer(this.ssOutside),
-			Layer(this.ssWater),
-			Layer(this.ssDoodad),
-			Layer(this.ssWater),
-			Layer(this.ssDoodad),
-			Layer(this.ssLight),
-			Layer(this.ssEdge)
+			MakeLayer(this.ssTheme),
+			MakeLayer(this.ssTheme),
+			MakeLayer(this.ssOutside),
+			MakeLayer(this.ssWater),
+			MakeLayer(this.ssDoodad),
+			MakeLayer(this.ssWater),
+			MakeLayer(this.ssDoodad),
+			MakeLayer(this.ssLight),
+			MakeLayer(this.ssEdge)
 		]
-	}
-	Layer(spriteSheet) {
-		return new TileMapLayer(spriteSheet, this.tileSize, this.mapWidth, this.mapHeight)
 	}
 	Draw() {
 		for (var y = 0; y < this.mapHeight; y++) {
@@ -42,7 +42,13 @@ class TileMap {
 		}
 	}
 	SetRandomFloor(x, y) {
-		// 13 - 18
+		this.mapLayers[0].SetData(x, y, RandomFloor())
+	}
+	RandomFloor() {
+		return Math.Random(13, 18)
+	}
+	Random(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min
 	}
 	SetRandomEdge(x, y) {
 

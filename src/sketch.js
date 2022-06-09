@@ -1,5 +1,10 @@
 function preload() {
 	_tileMap = new TileMap()
+	for (var y = 0; y < _tileMap.mapHeight; y++) {
+		for (var x = 0; x < _tileMap.mapWidth; x++) {
+			_tileMap.SetRandomFloor(x, y)
+		}
+	}
 	_layer = new Layer()
 	_slimeA1 = Slime.SlimeA([16, 16], _layer)
 	_slimeA2 = Slime.SlimeA([16, 32], _layer)
