@@ -32,7 +32,7 @@ class TileMap {
 			for (var y = 0; y < this.mapHeight; y++) {
 				for (var x = 0; x < this.mapWidth; x++) {
 					console.log(x + ", " + y)
-					var tile = layer.GetMap(x, y)
+					var tile = layer.GetData(x, y)
 					if (tile != -1) {
 						layer.ss.drawFrame(tile, x * this.tileSize, y * this.tileSize)
 					}
@@ -47,8 +47,7 @@ class TileMap {
 		return this.Random(13, 18)
 	}
 	Random(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min
 	}
-	SetRandomEdge(x, y) {
-
-	}
+	SetRandomEdge(x, y) { }
 }

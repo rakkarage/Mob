@@ -5,9 +5,10 @@
 - <del>state machine for animation states</del>
 - <del>make state machine reset when attack or walk done?</del>
 - <del>choose another random idle when first one is done</del>
-- tilemap
+- <del>tilemap</del>
 - random functions to place mobs
 - wall torch animations
-- give each tile an id
-- give each tile group an id
-- give each tilemap a spritesheet
+- <del>give each tile an id</del>
+- <del>give each tile group an id</del>
+- <del>give each tilemap a spritesheet</del>
+- random flip and rotate
